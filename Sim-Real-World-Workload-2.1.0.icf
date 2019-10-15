@@ -1,0 +1,324 @@
+Version 1.1.0 
+'TEST SETUP ====================================================================
+'Test Description
+	Simulated real-world performance testing template. Revision 2.1.0 (31/01/2006 E.McGuinn - Update 14/03/2016 J.Heinz)
+'Run Time
+'	hours      minutes    seconds
+	0          0          60
+'Ramp Up Time (s)
+	0
+'Default Disk Workers to Spawn
+	NUMBER_OF_CPUS
+'Default Network Workers to Spawn
+	0
+'Record Results
+	ALL
+'Worker Cycling
+'	start      step       step type
+	1          1          LINEAR
+'Disk Cycling
+'	start      step       step type
+	1          1          LINEAR
+'Queue Depth Cycling
+'	start      end        step       step type
+	1          32         2          EXPONENTIAL
+'Test Type
+	NORMAL
+'END test setup
+'RESULTS DISPLAY ===============================================================
+'Record Last Update Results,Update Frequency,Update Type
+	DISABLED,1,LAST_UPDATE
+'Bar chart 1 statistic
+	Total I/Os per Second
+'Bar chart 2 statistic
+	Total MBs per Second (Decimal)
+'Bar chart 3 statistic
+	Average I/O Response Time (ms)
+'Bar chart 4 statistic
+	Maximum I/O Response Time (ms)
+'Bar chart 5 statistic
+	% CPU Utilization (total)
+'Bar chart 6 statistic
+	Total Error Count
+'END results display
+'ACCESS SPECIFICATIONS =========================================================
+'Access specification name,default assignment
+	Email Server - R60 W40- RND- 4K,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	4096,100,60,100,0,1,0,0
+'Access specification name,default assignment
+	Database Server - R70 W30- RND- 8K,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	8192,100,70,100,0,1,0,0
+'Access specification name,default assignment
+	Web Server - R95 W5- RND- Var,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	2048,20,95,100,0,1,0,0
+	4096,19,95,100,0,1,0,0
+	8192,18,95,100,0,1,0,0
+	16384,17,95,100,0,1,0,0
+	32768,16,95,100,0,1,0,0
+	65536,10,95,100,0,1,0,0
+'Access specification name,default assignment
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	2048,33,80,100,0,1,0,0
+	4096,33,95,100,0,1,0,0
+	8192,34,80,100,0,1,0,0
+'Access specification name,default assignment
+	Archical File Server - R90 W10- SEQ- Var,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	65536,13,90,0,0,1,0,0
+	262144,34,95,100,0,1,0,0
+	524288,23,80,100,0,1,0,0
+	1048576,20,80,100,0,1,0,0
+	5242880,10,80,100,0,1,0,0
+'Access specification name,default assignment
+	User Store File Server - R80 W20- SEQ- Var,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	65536,13,80,0,0,1,0,0
+	262144,34,95,100,0,1,0,0
+	524288,23,80,100,0,1,0,0
+	1048576,20,80,100,0,1,0,0
+	5242880,10,80,100,0,1,0,0
+'Access specification name,default assignment
+	Streaming Media Server - R98 W2- SEQ- Var,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	65536,2,98,0,0,1,0,0
+	262144,5,95,100,0,1,0,0
+	524288,10,80,100,0,1,0,0
+	1048576,17,80,100,0,1,0,0
+	5242880,66,80,100,0,1,0,0
+'Access specification name,default assignment
+	Burst Read- 2M,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	2097152,100,100,0,0,16,0,0
+'Access specification name,default assignment
+	Burst Write- 2M,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	2097152,100,0,0,0,16,0,0
+'Access specification name,default assignment
+	Std Read- 2M,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	2097152,100,100,0,0,1,0,0
+'Access specification name,default assignment
+	Std Write- 2M,NONE
+'size,% of size,% reads,% random,delay,burst,align,reply
+	2097152,100,0,0,0,1,0,0
+'END access specifications
+'MANAGER LIST ==================================================================
+'Manager ID, manager name
+	1,localhost
+'Manager network address
+	127.0.0.1
+'Worker
+	Worker 1
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'Worker
+	Worker 2
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'Worker
+	Worker 3
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'Worker
+	Worker 4
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'Worker
+	Worker 5
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'Worker
+	Worker 6
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'Worker
+	Worker 7
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'Worker
+	Worker 8
+'Worker type
+	DISK
+'Default target settings for worker
+'Number of outstanding IOs,test connection rate,transactions per connection,use fixed seed,fixed seed value
+	64,DISABLED,1,DISABLED,0
+'Disk maximum size,starting sector,Data pattern
+	60000000,0,0
+'End default target settings for worker
+'Assigned access specs
+	Email Server - R60 W40- RND- 4K
+	Database Server - R70 W30- RND- 8K
+	Web Server - R95 W5- RND- Var
+	Online Tranaction Processing (OLTP)  Server - R80 W20- RND- Var
+	Archical File Server - R90 W10- SEQ- Var
+	User Store File Server - R80 W20- SEQ- Var
+	Streaming Media Server - R98 W2- SEQ- Var
+	Std Read- 2M
+	Burst Read- 2M
+	Std Write- 2M
+	Burst Write- 2M
+'End assigned access specs
+'Target assignments
+'End target assignments
+'End worker
+'End manager
+'END manager list
+Version 1.1.0 
